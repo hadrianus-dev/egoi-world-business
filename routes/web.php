@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Livewire\Pages\AboutController;
+use App\Http\Livewire\Pages\ContactController;
+use App\Http\Livewire\Pages\HomeController;
+use App\Http\Livewire\Pages\PortfolioController;
+use App\Http\Livewire\Pages\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', HomeController::class)->name('home');
+Route::get('/about', AboutController::class)->name('about');
+Route::get('/service', ServiceController::class)->name('service');
+Route::get('/portifolio', PortfolioController::class)->name('portifolio');
+Route::get('/contact', ContactController::class)->name('contact');
