@@ -72,19 +72,11 @@
                                         <a href="#">Portfolio</a>
                                         <ul>
                                             <li><a href="{{route('portifolio')}}">Portfolio</a></li>
-                                            <li><a href="{{route('home')}}">Portfolio Destaque</a></li>
-                                            <li><a href="{{route('home')}}">Portfolio Destaque</a></li>
                                         </ul>
                                     </li>
-                                    <!-- <li class="dropdown">
-                                        <a href="#">News</a>
-                                        <ul>
-                                            <li><a href="news.html">News</a></li>
-                                            <li><a href="news-carousel.html">News Carousel</a></li>
-                                            <li><a href="news-sidebar.html">News Sidebar</a></li>
-                                            <li><a href="news-details.html">News Details</a></li>
-                                        </ul>
-                                    </li> -->
+                                    <li>
+                                        <a href="#">Blog</a>
+                                    </li>
                                     <li>
                                         <a href="{{route('contact')}}">Contacto </a>
                                     </li>

@@ -8,6 +8,6 @@ class ServiceSingleController extends Component
 {
     public function render()
     {
-        return view('livewire.pages.service-single-controller');
+        return view('livewire.pages.service-single-controller')->layout('layouts.base');
     }
 }

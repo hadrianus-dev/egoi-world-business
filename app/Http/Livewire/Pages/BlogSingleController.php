@@ -8,6 +8,6 @@ class BlogSingleController extends Component
 {
     public function render()
     {
-        return view('livewire.pages.blog-single-controller');
+        return view('livewire.pages.blog-single-controller')->layout('layouts.base');
     }
 }

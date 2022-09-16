@@ -8,6 +8,6 @@ class PortfolioSingleController extends Component
 {
     public function render()
     {
-        return view('livewire.pages.portfolio-single-controller');
+        return view('livewire.pages.portfolio-single-controller')->layout('layouts.base');
     }
 }

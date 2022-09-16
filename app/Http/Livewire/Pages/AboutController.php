@@ -8,6 +8,6 @@ class AboutController extends Component
 {
     public function render()
     {
-        return view('livewire.pages.about-controller');
+        return view('livewire.pages.about-controller')->layout('layouts.base');
     }
 }
