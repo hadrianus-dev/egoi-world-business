@@ -60,10 +60,10 @@
 
     <div class="page-wrapper">
 
-        @include('components.header')
-        @include('components.stricky-header')
+        <livewire:components.header>
+        <livewire:components.stricky-header>
         {{$slot}}
-        @include('components.footer')
+        <livewire:components.footer>
 
     </div><!-- /.page-wrapper -->
     <div class="mobile-nav__wrapper">
