@@ -2201,7 +2201,7 @@ ul {
   align-items: center;
   font-size: 18px;
   color: rgba(var(--insur-black-rgb), .20);
-  border: 2px solid rgba(var(--insur-black-rgb), .20);
+  border: 2px solid rgba(var(--insur-base), .20);
   border-radius: 50%;
   margin: 0;
   text-align: center;
@@ -2211,7 +2211,7 @@ ul {
 .main-slider__nav .swiper-button-next:hover,
 .main-slider__nav .swiper-button-prev:hover {
   color: rgba(var(--insur-black-rgb), 1);
-  border: 2px solid rgba(var(--insur-black-rgb), 1);
+  border: 2px solid rgba(var(--insur-base), 1);
 }
 
 .main-slider__nav .swiper-button-next::after,

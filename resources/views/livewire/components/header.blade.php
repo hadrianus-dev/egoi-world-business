@@ -58,7 +58,7 @@
                                     <li class="dropdown current megamenu">
                                         <a href="{{route('home')}}">Home </a>
                                     </li>
-                                    <li><a href="{{route('about')}}">Quem Somos</a></li>
+                                    <li><a href="{{route('about')}}">Sobre</a></li>
                                     
                                     <li class="dropdown">
                                         <a href="#">Serviços </a>
@@ -75,7 +75,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="#">Blog</a>
+                                        <a href="#">Notícias</a>
                                     </li>
                                     <li>
                                         <a href="{{route('contact')}}">Contacto </a>
