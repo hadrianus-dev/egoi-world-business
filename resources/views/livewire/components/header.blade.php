@@ -17,7 +17,7 @@
                                 <span class="icon-email"></span>
                             </i>
                             <div class="text">
-                                <p><a href="mailto:contacto@egoli.com">contacto@egoli.com</a></p>
+                                <p><a href="mailto:{{$Enterprise->general_email}}">{{$Enterprise->general_email}}</a></p>
                             </div>
                         </li>
                     </ul>

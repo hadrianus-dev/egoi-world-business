@@ -16,6 +16,7 @@
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.10",
         "spatie/laravel-event-sourcing": "5.x",
+        "spatie/laravel-markdown": "^2.2",
         "spatie/laravel-query-builder": "^3.0"
     },
     "require-dev": {

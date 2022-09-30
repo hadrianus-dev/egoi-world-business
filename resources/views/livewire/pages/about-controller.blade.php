@@ -49,33 +49,11 @@
                     </div>
                     <p class="about-four__text-1">Egoli World Business, uma proposta melhor.</p>
 
-                    <p class="about-four__text-2">
-                        A Egoli World Business é uma empresa angolana, sediada em Luanda e com delegações em 
-                        Portugal e na República do Congo, que procura promover parcerias para o desenvolvimento 
-                        das comunidades. 
-                        Na Egoli World Business encontra o catering mais sofisticado para eventos e empresas, 
-                        soluções para a indústria mineira, petrolífera e transportes de passageiros. Porque estamos 
-                        comprometidos com o desenvolvimento social, na Egoli encontra ainda uma moderna Escola 
-                        de Condução adaptada aos novos condutores e equipada com a melhor tecnologia na área do 
-                        ensino da condução. 
-                        </p> <br>
+                    <x-markdown>
                         <p class="about-four__text-2">
-                        A Egoli World Business é possui uma vasta rede de contactos especialmente focada nas 
-                        necessidades dos empresários. O nosso serviço agiliza a sua comunicação com as entidades 
-                        oficiais e bancárias de diversos países africanos. Trabalhamos para acelerar o progresso e o 
-                        sucesso da sua empresa. 
-                        </p> <br>
-                        <p class="about-four__text-2">
-                        A Egoli World Business é uma empresa alicerçada nos valores da honestidade e da 
-                        idoneidade. Procuramos trabalhar em parceria com as comunidades locais a fim de promover 
-                        um desenvolvimento económico e social sustentável. Profundamente comprometidos com o 
-                        sucesso dos nossos clientes apostamos na inovação dos nossos recursos e na formação dos 
-                        nossos colaboradores. Somos a solução que estava à procura. 
-                        </p> <br>
-                        <p class="about-four__text-2">
-                        A Egoli World Business é uma empresa sólida e em contínuo crescimento para responder às 
-                        suas necessidades.
-                        </p>
+                        {{$Enterprise->description}}
+                        </p>                        
+                    </x-markdown>
                     <div class="about-four__founder">
                         <div class="about-four__founder-img">
                             <img src="{{asset('assets/images/resources/about-four-founder-img.jpg')}}" alt="">

@@ -122,7 +122,7 @@
                                         <img src="{{asset('assets/images/shapes/feature-one-shape-1.png')}}" alt="">
                                     </div>
                                     <h3 class="feature-one__title"><a href="{{route('about')}}">Missão</a></h3>
-                                    <p class="feature-one__text"> A Egoli World Business é uma empresa sólida e em contínuo crescimento para responder às suas necessidades.</p>
+                                    <p class="feature-one__text"> {{$Enterprise->mission}}.</p>
                                 </div>
                             </div>
                         </div>
@@ -139,7 +139,7 @@
                                         <img src="{{asset('assets/images/shapes/feature-one-shape-1.png')}}" alt="">
                                     </div>
                                     <h3 class="feature-one__title"><a href="{{route('about')}}">Visão</a></h3>
-                                    <p class="feature-one__text"> A Egoli World Business é uma empresa sólida e em contínuo crescimento para responder às suas necessidades.</p>
+                                    <p class="feature-one__text"> {{$Enterprise->vision}}</p>
                                 </div>
                             </div>
                         </div>
@@ -156,7 +156,7 @@
                                         <img src="{{asset('assets/images/shapes/feature-one-shape-1.png')}}" alt="">
                                     </div>
                                     <h3 class="feature-one__title"><a href="{{route('about')}}">Valor</a></h3>
-                                    <p class="feature-one__text"> A Egoli World Business é uma empresa sólida e em contínuo crescimento para responder às suas necessidades.</p>
+                                    <p class="feature-one__text"> {{$Enterprise->value}}</p>
                                 </div>
                             </div>
                         </div>
@@ -234,7 +234,7 @@
                                     </div>
                                 </li>
                             </ul>
-                            <p class="about-one__text-2">Nullam eu nibh vitae est tempor molestie id sed ex. Quisque dignissim maximus ipsum, sed rutrum metus tincidunt et. Sed eget tincidunt ipsum.</p>
+                            <p class="about-one__text-2">{{$Enterprise->body}}</p>
                             <div class="about-one__btn-call">
                                 <div class="about-one__btn-box">
                                     <a href="{{route('about')}}" class="thm-btn about-one__btn">Descubra Mais</a>
@@ -244,7 +244,7 @@
                                         <i class="fas fa-phone"></i>
                                     </div>
                                     <div class="about-one__call-content">
-                                        <a href="tel:9200368090">(+244) 999 999-999</a>
+                                        <a href="tel:{{$Enterprise->general_phone}}">(+244) 999 999-999</a>
                                         <p>Entre em Contacto</p>
                                     </div>
                                 </div>
@@ -288,84 +288,7 @@
             <div class="services-one__bottom">
                 <div class="services-one__container">
                     <div class="row">
-                        <!--Services Two Single Start-->
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="services-two__single">
-                                <div class="services-two__icon-box">
-                                    <div class="services-two__icon">
-                                        <span class="icon-drive"></span>
-                                    </div>
-                                </div>
-                                <h3 class="services-two__title"><a href="#">Serviços</a></h3>
-                                <p class="services-two__text">Lorem ipsum dolor sit amet, sed consectetur adipiscing rutrum metus et elit.</p>
-                            </div>
-                        </div>
-                        <!--Services Two Single End-->
-                        <!--Services Two Single Start-->
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="services-two__single">
-                                <div class="services-two__icon-box">
-                                    <div class="services-two__icon">
-                                        <span class="icon-family"></span>
-                                    </div>
-                                </div>
-                                <h3 class="services-two__title"><a href="#">Serviços</a></h3>
-                                <p class="services-two__text">Lorem ipsum dolor sit amet, sed consectetur adipiscing rutrum metus et elit.</p>
-                            </div>
-                        </div>
-                        <!--Services Two Single End-->
-                        <!--Services Two Single Start-->
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="services-two__single">
-                                <div class="services-two__icon-box">
-                                    <div class="services-two__icon">
-                                        <span class="icon-home"></span>
-                                    </div>
-                                </div>
-                                <h3 class="services-two__title"><a href="#">Serviços</a></h3>
-                                <p class="services-two__text">Lorem ipsum dolor sit amet, sed consectetur adipiscing rutrum metus et elit.</p>
-                            </div>
-                        </div>
-                        <!--Services Two Single End-->
-                        <!--Services Two Single Start-->
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="services-two__single">
-                                <div class="services-two__icon-box">
-                                    <div class="services-two__icon">
-                                        <span class="icon-heart-beat"></span>
-                                    </div>
-                                </div>
-                                <h3 class="services-two__title"><a href="#">Serviços</a></h3>
-                                <p class="services-two__text">Lorem ipsum dolor sit amet, sed consectetur adipiscing rutrum metus et elit.</p>
-                            </div>
-                        </div>
-                        <!--Services Two Single End-->
-                        <!--Services Two Single Start-->
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="services-two__single">
-                                <div class="services-two__icon-box">
-                                    <div class="services-two__icon">
-                                        <span class="icon-briefcase"></span>
-                                    </div>
-                                </div>
-                                <h3 class="services-two__title"><a href="#">Serviços</a></h3>
-                                <p class="services-two__text">Lorem ipsum dolor sit amet, sed consectetur adipiscing rutrum metus et elit.</p>
-                            </div>
-                        </div>
-                        <!--Services Two Single End-->
-                        <!--Services Two Single Start-->
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="services-two__single">
-                                <div class="services-two__icon-box">
-                                    <div class="services-two__icon">
-                                        <span class="icon-fire"></span>
-                                    </div>
-                                </div>
-                                <h3 class="services-two__title"><a href="#">Serviços</a></h3>
-                                <p class="services-two__text">Lorem ipsum dolor sit amet, sed consectetur adipiscing rutrum metus et elit.</p>
-                            </div>
-                        </div>
-                        <!--Services Two Single End-->
+                       @foreach ($Services as $service)
                         <!--Services Two Single Start-->
                         <div class="col-xl-3 col-lg-4 col-md-6">
                             <div class="services-two__single">
@@ -374,24 +297,12 @@
                                         <span class="icon-ring"></span>
                                     </div>
                                 </div>
-                                <h3 class="services-two__title"><a href="#">Serviços</a></h3>
-                                <p class="services-two__text">Lorem ipsum dolor sit amet, sed consectetur adipiscing rutrum metus et elit.</p>
+                                <h3 class="services-two__title"><a href="#">{{$service->title}}</a></h3>
+                                <p class="services-two__text">{{Str::words($service->body, 10, '...')}}</p>
                             </div>
                         </div>
                         <!--Services Two Single End-->
-                        <!--Services Two Single Start-->
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="services-two__single">
-                                <div class="services-two__icon-box">
-                                    <div class="services-two__icon">
-                                        <span class="icon-plane"></span>
-                                    </div>
-                                </div>
-                                <h3 class="services-two__title"><a href="#">Serviços</a></h3>
-                                <p class="services-two__text">Lorem ipsum dolor sit amet, sed consectetur adipiscing rutrum metus et elit.</p>
-                            </div>
-                        </div>
-                        <!--Services Two Single End-->
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -477,34 +388,21 @@
                                         <!--tab-->
                                         <div class="tab active-tab" id="home2">
                                             <div class="get-insurance__content">
-                                                <form class="get-insurance__form">
+                                                <form wire:submit.prevent='order' class="get-insurance__form">
                                                     <div class="get-insurance__content-box">
                                                         <div class="get-insurance__input-box">
-                                                            <input type="text" placeholder="Nome completo" name="name">
+                                                            <input wire:model='fullName' type="text" placeholder="Nome completo" name="name">
                                                         </div>
                                                         <div class="get-insurance__input-box">
-                                                            <input type="email" placeholder="Seu email" name="email">
+                                                            <input wire:model='email' type="email" placeholder="Seu email" name="email">
                                                         </div>
                                                         <div class="get-insurance__input-box">
                                                             <select class="selectpicker" aria-label="Escolha">
                                                                 <option selected>Escolha um serviço</option>
-                                                                <option value="1">Serviço</option>
-                                                                <option value="2">Serviço</option>
-                                                                <option value="3">Serviço</option>
+                                                                @foreach ($Services as $service)
+                                                                <option value="{{$service->title}}">{{$service->title}}</option>
+                                                                @endforeach
                                                             </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="get-insurance__progress">
-                                                        <div class="get-insurance__progress-single">
-                                                            <h4 class="get-insurance__progress-title">Limites:</h4>
-                                                            <div class="bar">
-                                                                <div class="bar-inner count-bar" data-percent="70%">
-                                                                    <div class="count-text"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="get-insurance__balance-box">
-                                                                <p class="get-insurance__balance">AOA90000</p>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                     <button type="submit" class="thm-btn get-insurance__btn">Pega uma cotação agora</button>

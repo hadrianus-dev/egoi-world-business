@@ -10,7 +10,7 @@
                                     <a href="{{route('home')}}"><img src="{{asset('assets/images/resources/footer-logo.png')}}" alt=""></a>
                                 </div>
                                 <div class="footer-widget__about-text-box">
-                                    <p class="footer-widget__about-text">Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt.</p>
+                                    <p class="footer-widget__about-text">{{Str::words($Enterprise->body, 30, '...')}}</p>
                                 </div>
                                 <div class="site-footer__social">
                                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -29,7 +29,7 @@
                                             <span class="icon-email"></span>
                                         </div>
                                         <div class="text">
-                                            <p><a href="mailto:contacto@egoli.com">contacto@egoli.com</a></p>
+                                            <p><a href="mailto:{{$Enterprise->general_email}}">{{$Enterprise->general_email}}</a></p>
                                         </div>
                                     </li>
                                     <li>
@@ -51,42 +51,16 @@
                             <div class="footer-widget__column footer-widget__gallery clearfix">
                                 <h3 class="footer-widget__title">Posts Recentes</h3>
                                 <ul class="footer-widget__gallery-list list-unstyled clearfix">
+                                    @foreach ($Posts as $post)
+                                     
                                     <li>
                                         <div class="footer-widget__gallery-img">
                                             <img src="{{asset('assets/images/resources/footer-widget-gallery-img-1.jpg')}}" alt="">
                                             <a href="#"><span class="fa fa-link"></span></a>
                                         </div>
                                     </li>
-                                    <li>
-                                        <div class="footer-widget__gallery-img">
-                                            <img src="{{asset('assets/images/resources/footer-widget-gallery-img-2.jpg')}}" alt="">
-                                            <a href="#"><span class="fa fa-link"></span></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="footer-widget__gallery-img">
-                                            <img src="{{asset('assets/images/resources/footer-widget-gallery-img-3.jpg')}}" alt="">
-                                            <a href="#"><span class="fa fa-link"></span></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="footer-widget__gallery-img">
-                                            <img src="{{asset('assets/images/resources/footer-widget-gallery-img-4.jpg')}}" alt="">
-                                            <a href="#"><span class="fa fa-link"></span></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="footer-widget__gallery-img">
-                                            <img src="{{asset('assets/images/resources/footer-widget-gallery-img-5.jpg')}}" alt="">
-                                            <a href="#"><span class="fa fa-link"></span></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="footer-widget__gallery-img">
-                                            <img src="{{asset('assets/images/resources/footer-widget-gallery-img-6.jpg')}}" alt="">
-                                            <a href="#"><span class="fa fa-link"></span></a>
-                                        </div>
-                                    </li>
+                                       
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
@@ -106,7 +80,7 @@
                                         <span class="icon-telephone"></span>
                                     </div>
                                     <div class="footer-widget__phone-text">
-                                        <a href="tel:9200368090">(+244) 999 999-999</a>
+                                        <a href="tel:{{$Enterprise->general_phone}}">{{$Enterprise->general_phone}}</a>
                                         <p>Entre em Contacto</p>
                                     </div>
                                 </div>
