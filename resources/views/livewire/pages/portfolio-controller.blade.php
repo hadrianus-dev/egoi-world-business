@@ -42,192 +42,31 @@
                             }
                         }
                     }'>
-                    @for ($i = 0; $i < $portfolios->count(); $i++)
+                        @foreach ($portfolios as $portfolio)
                         <!--Portfolio Single Start-->
+                        @if ($portfolio->gallery())
                         <div class="item">
                             <div class="portfolio__single">
                                 <div class="portfolio__img">
-                                    <img src="{{env('MY_PATH').$gallery[$i]['cover']}}" alt="">
+                                    <img src="{{env('MY_PATH').$portfolio->gallery()->first()->cover}}" alt="">
                                     <div class="portfolio__plus">
-                                        <a href="{{env('MY_PATH').$gallery[$i]['cover']}}" class="img-popup"><span class="icon-plus"></span></a>
+                                        <a href="{{env('MY_PATH').$portfolio->gallery()->first()->cover}}" class="img-popup"><span class="icon-plus"></span></a>
                                     </div>
-                                    
                                     <div class="portfolio__content">
-                                        <p class="portfolio__sub-title">{{$portfolios[$i]->title}}</p>
-                                        <h4 class="portfolio__title"><a href="#">{{Str::words($portfolios[$i]->body, 3, '...')}}</a></h4>
+                                        <p class="portfolio__sub-title">{{Str::words($portfolio->body, 3, '...')}}</p>
+                                        <h4 class="portfolio__title"><a href="{{route('portfolioshow', $portfolio->slug)}}">{{$portfolio->title}}</a></h4>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!--Portfolio Single End-->
-                    @endfor
+                        @endif
+                        @endforeach
+       
                     </div>
                 </div>
             </div>
         </section>
         <!--Portfolio Carousel Page End-->
     
-            <!--Portfolio Start-->
-            {{-- <section class="portfolio">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <ul class="portfolio-filter style1 post-filter has-dynamic-filters-counter list-unstyled">
-                                <li data-filter=".filter-item" class="active"><span class="filter-text">Todos</span></li>
-                                <li data-filter=".stra"><span class="filter-text">Projecto</span></li>
-                                <li data-filter=".busi"><span class="filter-text">Projecto</span></li>
-                                <li data-filter=".insur"><span class="filter-text">Projecto</span></li>
-                                <li data-filter=".poli"><span class="filter-text last-pd-none">Projecto</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="row filter-layout masonary-layout">
-                        <!--Portfolio Single Start-->
-                        <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi">
-                            <div class="portfolio__single">
-                                <div class="portfolio__img">
-                                    <img src="{{asset('assets/images/project/portfolio-1-1.jpg')}}" alt="">
-                                    <div class="portfolio__plus">
-                                        <a href="{{asset('assets/images/project/portfolio-1-1.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
-                                    </div>
-                                    <div class="portfolio__content">
-                                        <p class="portfolio__sub-title">Projecto</p>
-                                        <h4 class="portfolio__title"><a href="#">Egoli projectos</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Portfolio Single End-->
-                        <!--Portfolio Single Start-->
-                        <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi insur">
-                            <div class="portfolio__single">
-                                <div class="portfolio__img">
-                                    <img src="{{asset('assets/images/project/portfolio-1-2.jpg')}}" alt="">
-                                    <div class="portfolio__plus">
-                                        <a href="{{asset('assets/images/project/portfolio-1-2.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
-                                    </div>
-                                    <div class="portfolio__content">
-                                        <p class="portfolio__sub-title">Projecto</p>
-                                        <h4 class="portfolio__title"><a href="#">Egoli projectos</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Portfolio Single End-->
-                        <!--Portfolio Single Start-->
-                        <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi poli">
-                            <div class="portfolio__single">
-                                <div class="portfolio__img">
-                                    <img src="{{asset('assets/images/project/portfolio-1-3.jpg')}}" alt="">
-                                    <div class="portfolio__plus">
-                                        <a href="{{asset('assets/images/project/portfolio-1-3.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
-                                    </div>
-                                    <div class="portfolio__content">
-                                        <p class="portfolio__sub-title">Projecto</p>
-                                        <h4 class="portfolio__title"><a href="#">Egoli projectos</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Portfolio Single End-->
-                        <!--Portfolio Single Start-->
-                        <div class="col-xl-4 col-lg-6 col-md-6 filter-item poli busi">
-                            <div class="portfolio__single">
-                                <div class="portfolio__img">
-                                    <img src="{{asset('assets/images/project/portfolio-1-4.jpg')}}" alt="">
-                                    <div class="portfolio__plus">
-                                        <a href="{{asset('assets/images/project/portfolio-1-4.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
-                                    </div>
-                                    <div class="portfolio__content">
-                                        <p class="portfolio__sub-title">Projecto</p>
-                                        <h4 class="portfolio__title"><a href="#">Egoli projectos</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Portfolio Single End-->
-                        <!--Portfolio Single Start-->
-                        <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra poli">
-                            <div class="portfolio__single">
-                                <div class="portfolio__img">
-                                    <img src="{{asset('assets/images/project/portfolio-1-5.jpg')}}" alt="">
-                                    <div class="portfolio__plus">
-                                        <a href="{{asset('assets/images/project/portfolio-1-5.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
-                                    </div>
-                                    <div class="portfolio__content">
-                                        <p class="portfolio__sub-title">Projecto</p>
-                                        <h4 class="portfolio__title"><a href="#">Egoli projectos</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Portfolio Single End-->
-                        <!--Portfolio Single Start-->
-                        <div class="col-xl-4 col-lg-6 col-md-6 filter-item insur busi">
-                            <div class="portfolio__single">
-                                <div class="portfolio__img">
-                                    <img src="{{asset('assets/images/project/portfolio-1-6.jpg')}}" alt="">
-                                    <div class="portfolio__plus">
-                                        <a href="{{asset('assets/images/project/portfolio-1-6.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
-                                    </div>
-                                    <div class="portfolio__content">
-                                        <p class="portfolio__sub-title">Projecto</p>
-                                        <h4 class="portfolio__title"><a href="#">Egoli projectos</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Portfolio Single End-->
-                        <!--Portfolio Single Start-->
-                        <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra busi">
-                            <div class="portfolio__single">
-                                <div class="portfolio__img">
-                                    <img src="{{asset('assets/images/project/portfolio-1-7.jpg')}}" alt="">
-                                    <div class="portfolio__plus">
-                                        <a href="{{asset('assets/images/project/portfolio-1-7.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
-                                    </div>
-                                    <div class="portfolio__content">
-                                        <p class="portfolio__sub-title">Projecto</p>
-                                        <h4 class="portfolio__title"><a href="#">Egoli projectos</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Portfolio Single End-->
-                        <!--Portfolio Single Start-->
-                        <div class="col-xl-4 col-lg-6 col-md-6 filter-item stra poli">
-                            <div class="portfolio__single">
-                                <div class="portfolio__img">
-                                    <img src="{{asset('assets/images/project/portfolio-1-8.jpg')}}" alt="">
-                                    <div class="portfolio__plus">
-                                        <a href="{{asset('assets/images/project/portfolio-1-8.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
-                                    </div>
-                                    <div class="portfolio__content">
-                                        <p class="portfolio__sub-title">Projecto</p>
-                                        <h4 class="portfolio__title"><a href="#">Egoli projectos</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Portfolio Single End-->
-                        <!--Portfolio Single Start-->
-                        <div class="col-xl-4 col-lg-6 col-md-6 filter-item poli busi">
-                            <div class="portfolio__single">
-                                <div class="portfolio__img">
-                                    <img src="{{asset('assets/images/project/portfolio-1-9.jpg')}}" alt="">
-                                    <div class="portfolio__plus">
-                                        <a href="{{asset('assets/images/project/portfolio-1-9.jpg')}}" class="img-popup"><span class="icon-plus"></span></a>
-                                    </div>
-                                    <div class="portfolio__content">
-                                        <p class="portfolio__sub-title">Projecto</p>
-                                        <h4 class="portfolio__title"><a href="#">Egoli projectos</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Portfolio Single End-->
-                    </div>
-                </div>
-            </section> --}}
-            <!--Portfolio End-->
 </div>

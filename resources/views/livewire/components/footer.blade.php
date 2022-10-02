@@ -47,24 +47,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
-                            <div class="footer-widget__column footer-widget__gallery clearfix">
-                                <h3 class="footer-widget__title">Posts Recentes</h3>
-                                <ul class="footer-widget__gallery-list list-unstyled clearfix">
-                                    @foreach ($Posts as $post)
-                                     
-                                    <li>
-                                        <div class="footer-widget__gallery-img">
-                                            <img src="{{asset('assets/images/resources/footer-widget-gallery-img-1.jpg')}}" alt="">
-                                            <a href="#"><span class="fa fa-link"></span></a>
-                                        </div>
-                                    </li>
-                                       
-                                    @endforeach
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                        
+                        <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
                             <div class="footer-widget__column footer-widget__newsletter">
                                 <h3 class="footer-widget__title">Newsletter</h3>
                                 <p class="footer-widget__newsletter-text">Subscreva-se e receba sempre as nossas newsletter<br></p>

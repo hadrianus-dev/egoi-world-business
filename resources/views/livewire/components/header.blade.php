@@ -60,9 +60,9 @@
                                     </li>
                                     <li class="{{ Route::currentRouteName() == 'about' ? 'current' : ''  }}"><a href="{{route('about')}}">Sobre</a></li>
                                     
-                                    <li class="{{ Route::currentRouteName() == 'serviceindex' ? 'current' : ''  }}"><a href="{{route('serviceindex')}}">Serviços</a></li>
-                                    <li class="{{ Route::currentRouteName() == 'portifolio' ? 'current' : ''  }}"><a href="{{route('portifolio')}}">Portfolio</a></li>
-                                    <li class="{{ Route::currentRouteName() == 'postindex' ? 'current' : ''  }}"><a href="{{route('postindex')}}">Notícias </a></li>
+                                    <li class="{{ (Route::currentRouteName() == 'serviceindex' || Route::currentRouteName() == 'serviceshow') ? 'current' : ''  }}"><a href="{{route('serviceindex')}}">Serviços</a></li>
+                                    <li class="{{ (Route::currentRouteName() == 'portfolioindex' || Route::currentRouteName() == 'portfolioshow') ? 'current' : ''  }}"><a href="{{route('portfolioindex')}}">Portfolio</a></li>
+                                    <li class="{{ (Route::currentRouteName() == 'postindex' || Route::currentRouteName() == 'postshow') ? 'current' : ''  }}"><a href="{{route('postindex')}}">Notícias </a></li>
                                     <li class="{{ Route::currentRouteName() == 'contact' ? 'current' : ''  }}"><a href="{{route('contact')}}">Contacto </a></li>
                                 </ul>
                             </div>
