@@ -55,31 +55,15 @@
                             <div class="main-menu__main-menu-box-inner">
                                 <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                                 <ul class="main-menu__list">
-                                    <li class="dropdown current megamenu">
+                                    <li class="dropdown {{ Route::currentRouteName() == 'home' ? 'current' : ''  }} megamenu">
                                         <a href="{{route('home')}}">Home </a>
                                     </li>
-                                    <li><a href="{{route('about')}}">Sobre</a></li>
+                                    <li class="{{ Route::currentRouteName() == 'about' ? 'current' : ''  }}"><a href="{{route('about')}}">Sobre</a></li>
                                     
-                                    <li class="dropdown">
-                                        <a href="#">Serviços </a>
-                                        <ul>
-                                            <li><a href="{{route('service')}}">Serviços</a></li>
-                                            <li><a href="{{route('home')}}">Serviço 1</a></li>
-                                            <li><a href="{{route('home')}}">Serviço2</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#">Portfolio</a>
-                                        <ul>
-                                            <li><a href="{{route('portifolio')}}">Portfolio</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Notícias</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{route('contact')}}">Contacto </a>
-                                    </li>
+                                    <li class="{{ Route::currentRouteName() == 'serviceindex' ? 'current' : ''  }}"><a href="{{route('serviceindex')}}">Serviços</a></li>
+                                    <li class="{{ Route::currentRouteName() == 'portifolio' ? 'current' : ''  }}"><a href="{{route('portifolio')}}">Portfolio</a></li>
+                                    <li class="{{ Route::currentRouteName() == 'postindex' ? 'current' : ''  }}"><a href="{{route('postindex')}}">Notícias </a></li>
+                                    <li class="{{ Route::currentRouteName() == 'contact' ? 'current' : ''  }}"><a href="{{route('contact')}}">Contacto </a></li>
                                 </ul>
                             </div>
                             <div class="main-menu__main-menu-box-search-get-quote-btn">

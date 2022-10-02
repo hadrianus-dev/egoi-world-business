@@ -21,84 +21,7 @@
         <section class="insurance-page-one">
             <div class="services-one__container">
                 <div class="row">
-                    <!--Services Two Single Start-->
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="services-two__single">
-                            <div class="services-two__icon-box">
-                                <div class="services-two__icon">
-                                    <span class="icon-drive"></span>
-                                </div>
-                            </div>
-                            <h3 class="services-two__title"><a href="#">Serviços</a></h3>
-                            <p class="services-two__text">Lorem ipsum dolor sit amet, sed consectetur adipiscing rutrum metus et elit.</p>
-                        </div>
-                    </div>
-                    <!--Services Two Single End-->
-                    <!--Services Two Single Start-->
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="services-two__single">
-                            <div class="services-two__icon-box">
-                                <div class="services-two__icon">
-                                    <span class="icon-family"></span>
-                                </div>
-                            </div>
-                            <h3 class="services-two__title"><a href="#">Serviços</a></h3>
-                            <p class="services-two__text">Lorem ipsum dolor sit amet, sed consectetur adipiscing rutrum metus et elit.</p>
-                        </div>
-                    </div>
-                    <!--Services Two Single End-->
-                    <!--Services Two Single Start-->
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="services-two__single">
-                            <div class="services-two__icon-box">
-                                <div class="services-two__icon">
-                                    <span class="icon-home"></span>
-                                </div>
-                            </div>
-                            <h3 class="services-two__title"><a href="#">Serviços</a></h3>
-                            <p class="services-two__text">Lorem ipsum dolor sit amet, sed consectetur adipiscing rutrum metus et elit.</p>
-                        </div>
-                    </div>
-                    <!--Services Two Single End-->
-                    <!--Services Two Single Start-->
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="services-two__single">
-                            <div class="services-two__icon-box">
-                                <div class="services-two__icon">
-                                    <span class="icon-heart-beat"></span>
-                                </div>
-                            </div>
-                            <h3 class="services-two__title"><a href="#">Serviços</a></h3>
-                            <p class="services-two__text">Lorem ipsum dolor sit amet, sed consectetur adipiscing rutrum metus et elit.</p>
-                        </div>
-                    </div>
-                    <!--Services Two Single End-->
-                    <!--Services Two Single Start-->
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="services-two__single">
-                            <div class="services-two__icon-box">
-                                <div class="services-two__icon">
-                                    <span class="icon-briefcase"></span>
-                                </div>
-                            </div>
-                            <h3 class="services-two__title"><a href="#">Serviços</a></h3>
-                            <p class="services-two__text">Lorem ipsum dolor sit amet, sed consectetur adipiscing rutrum metus et elit.</p>
-                        </div>
-                    </div>
-                    <!--Services Two Single End-->
-                    <!--Services Two Single Start-->
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="services-two__single">
-                            <div class="services-two__icon-box">
-                                <div class="services-two__icon">
-                                    <span class="icon-fire"></span>
-                                </div>
-                            </div>
-                            <h3 class="services-two__title"><a href="#">Serviços</a></h3>
-                            <p class="services-two__text">Lorem ipsum dolor sit amet, sed consectetur adipiscing rutrum metus et elit.</p>
-                        </div>
-                    </div>
-                    <!--Services Two Single End-->
+                    @foreach ($Services as $service)
                     <!--Services Two Single Start-->
                     <div class="col-xl-3 col-lg-4 col-md-6">
                         <div class="services-two__single">
@@ -107,24 +30,12 @@
                                     <span class="icon-ring"></span>
                                 </div>
                             </div>
-                            <h3 class="services-two__title"><a href="#">Serviços</a></h3>
-                            <p class="services-two__text">Lorem ipsum dolor sit amet, sed consectetur adipiscing rutrum metus et elit.</p>
+                            <h3 class="services-two__title"><a href="{{route('serviceshow', $service->slug)}}">{{$service->title}}</a></h3>
+                            <p class="services-two__text">{{Str::words($service->body, 10, '...')}}</p>
                         </div>
                     </div>
                     <!--Services Two Single End-->
-                    <!--Services Two Single Start-->
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="services-two__single">
-                            <div class="services-two__icon-box">
-                                <div class="services-two__icon">
-                                    <span class="icon-plane"></span>
-                                </div>
-                            </div>
-                            <h3 class="services-two__title"><a href="#">Serviços</a></h3>
-                            <p class="services-two__text">Lorem ipsum dolor sit amet, sed consectetur adipiscing rutrum metus et elit.</p>
-                        </div>
-                    </div>
-                    <!--Services Two Single End-->
+                    @endforeach
                 </div>
             </div>
         </section>

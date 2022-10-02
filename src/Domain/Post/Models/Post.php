@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Domain\Post\Models;
 
 use Domain\Category\Models\Category;
+use Domain\Comment\Models\Comment;
 use Illuminate\Database\Eloquent\Model;
 use Domain\Shared\Models\Concerns\HasSlug;
 use Domain\Post\Models\Builders\PostBuilder;
@@ -12,6 +13,7 @@ use Domain\Shared\Models\User;
 use JustSteveKing\KeyFactory\Models\Concerns\HasKey;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Post extends Model
 {
@@ -52,6 +54,14 @@ class Post extends Model
         return $this->belongsTo(
             related: Category::class,
             foreignKey: 'category_id'
+        );
+    }
+
+    public function comment(): HasMany
+    {
+        return $this->hasMany(
+            related: Comment::class,
+            foreignKey: 'post_id'
         );
     }
 

@@ -16,9 +16,59 @@
                 </div>
             </section>
             <!--Page Header End-->
+
+            <!--Portfolio Carousel Page Start-->
+        <section class="portfolio-carousel-page">
+            <div class="container">
+                <div class="row">
+                    <div class="thm-owl__carousel owl-theme owl-carousel portfolio-carousel carousel-dot-style" data-owl-options='{
+                        "items": 3,
+                        "margin": 30,
+                        "smartSpeed": 700,
+                        "loop":true,
+                        "autoplay": 6000,
+                        "nav":false,
+                        "dots":true,
+                        "navText": ["<span class=\"fa fa-angle-left\"></span>","<span class=\"fa fa-angle-right\"></span>"],
+                        "responsive":{
+                            "0":{
+                                "items":1
+                            },
+                            "768":{
+                                "items":2
+                            },
+                            "992":{
+                                "items": 3
+                            }
+                        }
+                    }'>
+                    @for ($i = 0; $i < $portfolios->count(); $i++)
+                        <!--Portfolio Single Start-->
+                        <div class="item">
+                            <div class="portfolio__single">
+                                <div class="portfolio__img">
+                                    <img src="{{env('MY_PATH').$gallery[$i]['cover']}}" alt="">
+                                    <div class="portfolio__plus">
+                                        <a href="{{env('MY_PATH').$gallery[$i]['cover']}}" class="img-popup"><span class="icon-plus"></span></a>
+                                    </div>
+                                    
+                                    <div class="portfolio__content">
+                                        <p class="portfolio__sub-title">{{$portfolios[$i]->title}}</p>
+                                        <h4 class="portfolio__title"><a href="#">{{Str::words($portfolios[$i]->body, 3, '...')}}</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Portfolio Single End-->
+                    @endfor
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Portfolio Carousel Page End-->
     
             <!--Portfolio Start-->
-            <section class="portfolio">
+            {{-- <section class="portfolio">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
@@ -178,6 +228,6 @@
                         <!--Portfolio Single End-->
                     </div>
                 </div>
-            </section>
+            </section> --}}
             <!--Portfolio End-->
 </div>
