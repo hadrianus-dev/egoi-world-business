@@ -169,87 +169,21 @@
                     <h2 class="section-title__title">Questões frequentes <br> respostas previas</h2>
                 </div>
                 <div class="row">
-                    <div class="col-xl-6 col-lg-6">
+                    <div class="col-xl-12 col-lg-12">
                         <div class="faq-one__single">
                             <div class="accrodion-grp faq-one-accrodion" data-grp-name="faq-one-accrodion-1">
+                                @foreach ($service->FAQ as $faq)
                                 <div class="accrodion">
                                     <div class="accrodion-title">
-                                        <h4><span>?</span> Maecenas scelerisque nibh vitae turpis</h4>
+                                        <h4><span>?</span> {{$faq->question}}</h4>
                                     </div>
                                     <div class="accrodion-content">
                                         <div class="inner">
-                                            <p>Aliquam viverra arcu. Donec aliquet blandit enim feugiat. Suspendisse id
-                                                quam sed eros tincidunt luctus sit amet eu nibh egestas tempus turpis,
-                                                sit amet mattis magna varius non.</p>
+                                            <p>{{$faq->response}}</p>
                                         </div><!-- /.inner -->
                                     </div>
                                 </div>
-                                <div class="accrodion active">
-                                    <div class="accrodion-title">
-                                        <h4><span>?</span> Nulla fermentum leo nibh, a vestibulum</h4>
-                                    </div>
-                                    <div class="accrodion-content">
-                                        <div class="inner">
-                                            <p>Aliquam viverra arcu. Donec aliquet blandit enim feugiat. Suspendisse id
-                                                quam sed eros tincidunt luctus sit amet eu nibh egestas tempus turpis,
-                                                sit amet mattis magna varius non.</p>
-                                        </div><!-- /.inner -->
-                                    </div>
-                                </div>
-                                <div class="accrodion last-chiled">
-                                    <div class="accrodion-title">
-                                        <h4><span>?</span> Quisque vel rutrum tortor, in rhoncus</h4>
-                                    </div>
-                                    <div class="accrodion-content">
-                                        <div class="inner">
-                                            <p>Aliquam viverra arcu. Donec aliquet blandit enim feugiat. Suspendisse id
-                                                quam sed eros tincidunt luctus sit amet eu nibh egestas tempus turpis,
-                                                sit amet mattis magna varius non.</p>
-                                        </div><!-- /.inner -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="faq-one__single">
-                            <div class="accrodion-grp faq-one-accrodion" data-grp-name="faq-one-accrodion-2">
-                                <div class="accrodion">
-                                    <div class="accrodion-title">
-                                        <h4><span>?</span> Maecenas scelerisque nibh vitae turpis</h4>
-                                    </div>
-                                    <div class="accrodion-content">
-                                        <div class="inner">
-                                            <p>Aliquam viverra arcu. Donec aliquet blandit enim feugiat. Suspendisse id
-                                                quam sed eros tincidunt luctus sit amet eu nibh egestas tempus turpis,
-                                                sit amet mattis magna varius non.</p>
-                                        </div><!-- /.inner -->
-                                    </div>
-                                </div>
-                                <div class="accrodion active">
-                                    <div class="accrodion-title">
-                                        <h4><span>?</span> Nulla fermentum leo nibh, a vestibulum</h4>
-                                    </div>
-                                    <div class="accrodion-content">
-                                        <div class="inner">
-                                            <p>Aliquam viverra arcu. Donec aliquet blandit enim feugiat. Suspendisse id
-                                                quam sed eros tincidunt luctus sit amet eu nibh egestas tempus turpis,
-                                                sit amet mattis magna varius non.</p>
-                                        </div><!-- /.inner -->
-                                    </div>
-                                </div>
-                                <div class="accrodion last-chiled">
-                                    <div class="accrodion-title">
-                                        <h4><span>?</span> Quisque vel rutrum tortor, in rhoncus</h4>
-                                    </div>
-                                    <div class="accrodion-content">
-                                        <div class="inner">
-                                            <p>Aliquam viverra arcu. Donec aliquet blandit enim feugiat. Suspendisse id
-                                                quam sed eros tincidunt luctus sit amet eu nibh egestas tempus turpis,
-                                                sit amet mattis magna varius non.</p>
-                                        </div><!-- /.inner -->
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
