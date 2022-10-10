@@ -3,9 +3,10 @@
 namespace App\Http\Livewire\Pages;
 
 use Livewire\Component;
-use Domain\Enterprise\Models\Enterprise;
 use Domain\Post\Models\Post;
 use Domain\Service\Models\Service;
+use Artesaos\SEOTools\Facades\SEOTools;
+use Domain\Enterprise\Models\Enterprise;
 
 class HomeController extends Component
 {
@@ -27,6 +28,20 @@ class HomeController extends Component
     
     public function render()
     {
+        $base = 'http://egoi-world-business.test/post/';
+
+        
+        SEOTools::setTitle('Home');
+        SEOTools::setDescription('A Egoli World Business é uma empresa angolana, 
+        sediada em Luanda e com delegações em Portugal e na República do Congo, 
+        que procura promover parcerias para o desenvolvimento das comunidades. ');
+        SEOTools::opengraph()->setUrl('https://egoliworldbusiness.com');
+        SEOTools::setCanonical('https://egoliworldbusiness.com');
+        SEOTools::opengraph()->addProperty('type', 'articles');
+        SEOTools::twitter()->setSite('@egoliworldbusiness');
+        SEOTools::jsonLd()->addImage('https://egoliworldbusiness.com/public/assets/images/resources/logo-1.png');
+
+        
         return view('livewire.pages.home-controller')->layout('layouts.base');
     }
 }

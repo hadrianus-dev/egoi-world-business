@@ -27,10 +27,10 @@
                                     <img src="{{env('MY_PATH'). $post->cover}}" alt="">
                                 </div>
                                 <div class="news-details__content">
-                                    <ul class="list-unstyled news-details__meta">
+                                    <ul class="list-unstyled news-details__meta"
                                         <li><a href="news-details.html"><i class="far fa-calendar"></i> {{$post->created_at->diffForHumans()}}  </a>
                                         </li>
-                                        <li><a href="news-details.html"><i class="far fa-comments"></i> 02 Comments</a>
+                                        <li><a href="news-details.html"><i class="far fa-comments"></i> {{$post->comment->count()}} Comentário(s)</a>
                                         </li>
                                     </ul>
                                     <h3 class="news-details__title">{{Str::ucfirst($post->title)}}</h3>

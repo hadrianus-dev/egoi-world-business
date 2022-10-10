@@ -21,8 +21,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    @yield('meta')
+    <!-- SEO -->
+    {!! SEO::generate() !!}
 
+    <!-- MINIFIED -->
+    {!! SEO::generate(true) !!}
+    
+    <!-- LUMEN -->
+    {!! app('seotools')->generate() !!}
+    
     <link rel="stylesheet" href="{{asset('assets/vendors/bootstrap/css/bootstrap.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/vendors/animate/animate.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/vendors/animate/custom-animate.css')}}" />
