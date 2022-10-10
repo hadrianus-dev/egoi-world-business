@@ -125,10 +125,7 @@
                         <div class="col-xl-4 col-lg-5">
                             <div class="sidebar">
                                 <div class="sidebar__single sidebar__search">
-                                    <form action="#" class="sidebar__search-form">
-                                        <input type="search" placeholder="Pesquise Aqui">
-                                        <button type="submit"><i class="icon-magnifying-glass"></i></button>
-                                    </form>
+                                    <livewire:components.blog-search>
                                 </div>
                                 <div class="sidebar__single sidebar__post">
                                     <h3 class="sidebar__title">Últimas Notícias</h3>
