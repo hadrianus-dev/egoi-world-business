@@ -71,7 +71,7 @@
                                     <a href="#" class="main-menu__search search-toggler icon-magnifying-glass"></a>
                                 </div>
                                 <div class="main-menu__main-menu-box-get-quote-btn-box">
-                                    <a href="contact.html" class="thm-btn main-menu__main-menu-box-get-quote-btn">Newslatter</a>
+                                    <a href="{{route('contact')}}" class="thm-btn main-menu__main-menu-box-get-quote-btn">Newslatter</a>
                                 </div>
                             </div>
                         </div>
