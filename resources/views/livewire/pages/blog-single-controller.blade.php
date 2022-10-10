@@ -38,70 +38,83 @@
                                     {{$post->description}}
                                     </x-markdown>
                                 </div>
-                                {{-- <div class="news-details__bottom">
-                                    <p class="news-details__tags">
-                                        <span>Tags</span>
-                                        <a href="#">Insurance</a>
-                                        <a href="#">Policies</a>
-                                    </p>
+                                <div class="news-details__bottom">
                                     <div class="news-details__social-list">
                                         <a href="#"><i class="fab fa-twitter"></i></a>
                                         <a href="#"><i class="fab fa-facebook"></i></a>
-                                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
                                         <a href="#"><i class="fab fa-instagram"></i></a>
                                     </div>
                                 </div>
                                 <div class="blgo-details__pagenation-box">
-                                    <ul class="list-unstyled news-details__pagenation">
-                                        <li>We proudly protect our loved ones life</li>
-                                        <li>Survived not only five centuries</li>
-                                    </ul>
-                                </div> --}}
-                                {{-- <div class="comment-one">
-                                    <h3 class="comment-one__title">2 comments</h3>
+                                    
+                                <!--Similar Portfolio Start-->
+                                <section class="similar-portfolio">
+                                    <div class="row">
+                                        @foreach ($galleries as $item)
+                                        <!--Portfolio Single Start-->
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="portfolio__single">
+                                                <div class="portfolio__img">
+                                                    <img src="{{env('MY_PATH'). $item->cover}}" alt="">
+                                                    <div class="portfolio__plus">
+                                                        <a href="{{env('MY_PATH'). $item->cover}}" class="img-popup"><span class="icon-plus"></span></a>
+                                                    </div>
+                                                    <div class="portfolio__content">
+                                                        <p class="portfolio__sub-title">Arquivos Relacionados</p>
+                                                        <h4 class="portfolio__title"><a href="#">{{$post->title}}</a></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--Portfolio Single End-->
+                                        @endforeach
+                                    </div>
+                                </section>
+                                <!--Similar Portfolio End-->
+                                </div>
+                                <div class="comment-one">
+                                    <h3 class="comment-one__title">{{$allComments->count()}} Comentário(s)</h3>
+                                    @foreach ($comments as $item)
                                     <div class="comment-one__single">
                                         <div class="comment-one__image">
                                             <img src="assets/images/blog/comment-1-1.jpg" alt="">
                                         </div>
                                         <div class="comment-one__content">
-                                            <h3>Kevin Martin</h3>
-                                            <p>Mauris non dignissim purus, ac commodo diam. Donec sit amet lacinia nulla. Aliquam quis purus in justo pulvinar tempor. Aliquam tellus nulla, sollicitudin at euismod.</p>
-                                            <a href="news-details.html" class="thm-btn comment-one__btn">Reply</a>
+                                            <h3>{{$item->name}}</h3>
+                                            <p>
+                                                <x-markdown>
+                                                    {{$item->body}}
+                                                </x-markdown>
+                                            </p>
+                                            {{-- <a href="news-details.html" class="thm-btn comment-one__btn">Reply</a> --}}
                                         </div>
                                     </div>
-                                    <div class="comment-one__single">
-                                        <div class="comment-one__image">
-                                            <img src="assets/images/blog/comment-1-2.jpg" alt="">
-                                        </div>
-                                        <div class="comment-one__content">
-                                            <h3>Sarah Albert</h3>
-                                            <p>Mauris non dignissim purus, ac commodo diam. Donec sit amet lacinia nulla. Aliquam quis purus in justo pulvinar tempor. Aliquam tellus nulla, sollicitudin at euismod.</p>
-                                            <a href="news-details.html" class="thm-btn comment-one__btn">Reply</a>
-                                        </div>
-                                    </div>
-                                </div> --}}
-                                <div class="comment-form">
+                                    @endforeach
+                                    
+                                </div>
+                                <div wire:ignore.self class="comment-form">
                                     <h3 class="comment-form__title">Deixe seu Comentário</h3>
                                     <form action="#" class="comment-one__form contact-form-validated" novalidate="novalidate">
+                                        @csrf
                                         <div class="row">
                                             <div class="col-xl-6">
                                                 <div class="comment-form__input-box">
-                                                    <input type="text" placeholder="Your name" name="name">
+                                                    <input wire:model='comment.name' type="text" placeholder="Seu nome" name="name">
                                                 </div>
                                             </div>
                                             <div class="col-xl-6">
                                                 <div class="comment-form__input-box">
-                                                    <input type="email" placeholder="Email address" name="email">
+                                                    <input wire:model='comment.email' type="email" placeholder="Email" name="email">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-xl-12">
                                                 <div class="comment-form__input-box text-message-box">
-                                                    <textarea name="message" placeholder="Write a comment"></textarea>
+                                                    <textarea wire:model='comment.body' name="message" placeholder="Comentário"></textarea>
                                                 </div>
                                                 <div class="comment-form__btn-box">
-                                                    <button type="submit" class="thm-btn comment-form__btn">Submit comment</button>
+                                                    <button type="buttom" wire:click="comment" class="thm-btn comment-form__btn">Submeter</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -172,40 +185,18 @@
                                 <div class="sidebar__single sidebar__comments">
                                     <h3 class="sidebar__title">Comentários</h3>
                                     <ul class="sidebar__comments-list list-unstyled">
+                                        @foreach ($allComments as $item)
                                         <li>
                                             <div class="sidebar__comments-icon">
                                                 <i class="fas fa-comment"></i>
                                             </div>
                                             <div class="sidebar__comments-text-box">
-                                                <p>A Wordpress Commenter <br> on Launch New Mobile App</p>
+                                                <p><span>{{$item->name}}</span> Disse:</p>
+                                                <p>{{Str::words($item->body, 15, ' ...')}}</p>
                                             </div>
                                         </li>
-                                        <li>
-                                            <div class="sidebar__comments-icon">
-                                                <i class="fas fa-comment"></i>
-                                            </div>
-                                            <div class="sidebar__comments-text-box">
-                                                <p><span>John Doe</span> on Template:</p>
-                                                <h5>Comments</h5>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="sidebar__comments-icon">
-                                                <i class="fas fa-comment"></i>
-                                            </div>
-                                            <div class="sidebar__comments-text-box">
-                                                <p>A Wordpress Commenter <br> on Launch New Mobile App</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="sidebar__comments-icon">
-                                                <i class="fas fa-comment"></i>
-                                            </div>
-                                            <div class="sidebar__comments-text-box">
-                                                <p> <span>John Doe</span> on Template:</p>
-                                                <h5>Comments</h5>
-                                            </div>
-                                        </li>
+                                        @endforeach
+
                                     </ul>
                                 </div>
                             </div>

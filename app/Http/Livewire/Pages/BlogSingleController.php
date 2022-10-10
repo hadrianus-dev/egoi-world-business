@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Pages;
 
 use Domain\Category\Models\Category;
 use Domain\Comment\Models\Comment;
+use Domain\Gallery\Models\Gallery;
 use Domain\Post\Models\Post;
 use Livewire\Component;
 
@@ -15,6 +16,9 @@ class BlogSingleController extends Component
     public $posts;
     public $categories;
     public $comment;
+    public $comments;
+    public $allComments;
+    public $galleries;
 
     protected $rules = [
         'comment.name' => 'required|string|min:3',
@@ -22,11 +26,14 @@ class BlogSingleController extends Component
         'comment.body' => 'required|string'
     ];
 
-    public function mount(Post $post, Category $category, Comment $comment): void
+    public function mount(Post $post, Category $category, Comment $comment, Gallery $gallery): void
     {
         $this->post = $post;
         $this->comment = $comment;
 
+        $this->allComments = $comment::where('published', true)->orderBy('created_at', 'desc')->get();
+        $this->galleries = $gallery::where([['published', true],['post_id', $this->post->id]])->orderBy('created_at', 'desc')->get();
+        $this->comments = $comment::where('published', true)->orderBy('created_at', 'desc')->limit(2)->get();
         $this->posts = Post::with(['category','user'])->where('published', true)->orderBy('created_at', 'desc')->limit(3)->get();
         $this->categories = $category::where('published', true)->orderBy('created_at', 'desc')->limit(3)->get();
     }
@@ -34,11 +41,14 @@ class BlogSingleController extends Component
     public function comment()
     {
         $data = $this->validate()['comment'];
-        dd($data);
         $data['portfolio_id'] = null;
         $data['published'] = true;
+        #dd($data);
         $this->post->comment()->create($data);
         $this->comment->fresh();
+        $this->comment->name = '';
+        $this->comment->email = '';
+        $this->comment->body = '';
     }
 
     public function render()

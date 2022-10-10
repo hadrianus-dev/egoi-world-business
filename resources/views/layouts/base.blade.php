@@ -47,6 +47,7 @@
     <!-- template styles -->
     <link rel="stylesheet" href="{{asset('assets/css/insur.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/insur-responsive.css')}}" />
+    @livewireStyles
 </head>
 <body class="custom-cursor">
 
@@ -152,5 +153,6 @@
 
 <!-- template js -->
 <script src="{{asset('assets/js/insur.js')}}"></script>
+@livewireScripts
 </body>
 </html>

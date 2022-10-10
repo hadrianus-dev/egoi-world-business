@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-
+/* 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -61,3 +61,4 @@ Route::middleware('auth:sanctum')->prefix('service')->as('service')->group(funct
     Route::patch('{service:key}', ServiceUpadate::class)->name('update'); //route('api:v1:service:update');
     Route::delete('{service:key}', ServiceDelete::class)->name('delete'); //route('api:v1:service:delete');
 });
+ */
