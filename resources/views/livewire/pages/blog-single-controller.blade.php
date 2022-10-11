@@ -40,9 +40,9 @@
                                 </div>
                                 <div class="news-details__bottom">
                                     <div class="news-details__social-list">
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="#"><i class="fab fa-facebook"></i></a>
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw"><i class="fab fa-twitter"></i></a>
+                                        <a href="http://www.facebook.com/share.php?u=https://egoliworldbusiness.com/post/{{$post->slug}}"><i class="fab fa-facebook"></i></a>
+                                        {{-- <a href="#"><i class="fab fa-instagram"></i></a> --}}
                                     </div>
                                 </div>
                                 <div class="blgo-details__pagenation-box">

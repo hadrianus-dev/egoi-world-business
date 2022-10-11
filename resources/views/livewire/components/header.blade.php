@@ -31,9 +31,8 @@
                     </div>
                     <div class="main-header__top-social-box">
                         <div class="main-header__top-social">
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw"><i class="fab fa-twitter"></i></a>
+                            <a href="http://www.facebook.com/share.php?u=https://egoliworldbusiness.com"><i class="fab fa-facebook"></i></a>
                             <a href="#"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
