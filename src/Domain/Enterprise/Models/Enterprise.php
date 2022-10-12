@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Domain\Enterprise\Models;
 
+use Domain\Shared\Models\User;
 use Domain\Category\Models\Category;
 use Illuminate\Database\Eloquent\Model;
 use Domain\Shared\Models\Concerns\HasSlug;
-use Domain\Enterprise\Models\Builders\EnterpriseBuilder;
-use Domain\Shared\Models\User;
 use JustSteveKing\KeyFactory\Models\Concerns\HasKey;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Domain\Enterprise\Models\Builders\EnterpriseBuilder;
 
 class Enterprise extends Model
 {
@@ -54,4 +54,9 @@ class Enterprise extends Model
             foreignKey: 'user_id'
         );
     }
+
+   /*  public function vzt()
+    {
+        return visits($this);
+    } */
 }

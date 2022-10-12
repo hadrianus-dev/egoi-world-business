@@ -6,16 +6,20 @@ use Livewire\Component;
 use Domain\Post\Models\Post;
 use Domain\Service\Models\Service;
 use Artesaos\SEOTools\Facades\SEOTools;
+use Domain\Aparence\Models\Aparence;
 use Domain\Enterprise\Models\Enterprise;
 
 class HomeController extends Component
 {
+    public $Aparence;
     public $Enterprise;
     public $Services;
     public $Post;
 
-    public function mount(Enterprise $enterprise, Service $service, Post $post): void
+    public function mount(Enterprise $enterprise, Service $service, Post $post, Aparence $aparence): void
     {
+        $this->Aparence = $aparence::where('published', true)->get();
+        #dd($this->Aparence)
         $this->Enterprise = $enterprise::where('published', true)->first();
         $this->Services = $service::where('published', true)->orderBy('created_at', 'desc')->get();
         $this->Post = $post::with(['category','user'])->where('published', true)->orderBy('created_at', 'desc')->limit(3)->get();

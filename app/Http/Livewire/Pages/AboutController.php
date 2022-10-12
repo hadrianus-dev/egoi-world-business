@@ -16,6 +16,7 @@ class AboutController extends Component
     {
         $this->Enterprise = $enterprise::where('published', true)->first();
         $this->Services = $service::where('published', true)->orderBy('created_at', 'desc')->get();
+        
     }
     
     public function render()

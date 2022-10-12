@@ -19,7 +19,7 @@
 
                     <div class="swiper-slide">
                         <div class="image-layer"
-                            style="background-image: url({{asset('assets/images/backgrounds/main-slider-1-1.jpg')}});"></div>
+                            style="background-image: url({{env('MY_PATH'). $Aparence[0]['cover']}});"></div>
                         <!-- /.image-layer -->
 
                         <div class="main-slider-shape-1 float-bob-x">
@@ -43,7 +43,7 @@
 
                     <div class="swiper-slide">
                         <div class="image-layer"
-                            style="background-image: url({{asset('assets/images/backgrounds/main-slider-1-2.jpg')}});"></div>
+                            style="background-image: url({{env('MY_PATH'). $Aparence[1]['cover']}});"></div>
                         <!-- /.image-layer -->
 
                         <div class="main-slider-shape-1 float-bob-x">
@@ -67,7 +67,7 @@
 
                     <div class="swiper-slide">
                         <div class="image-layer"
-                            style="background-image: url({{asset('assets/images/backgrounds/main-slider-1-3.jpg')}});"></div>
+                            style="background-image: url({{env('MY_PATH'). $Aparence[2]['cover']}});"></div>
                         <!-- /.image-layer -->
 
                         <div class="main-slider-shape-1 float-bob-x">

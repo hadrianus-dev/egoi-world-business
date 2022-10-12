@@ -13,21 +13,21 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', HomeController::class)->name('home');
+Route::get('/', HomeController::class)->name('home')->middleware('visitor');
 Route::get('/about', AboutController::class)->name('about');
 Route::get('/contact', ContactController::class)->name('contact');
 
-Route::prefix('service')->as('service')->group(function(){
+Route::middleware('visitor')->prefix('service')->as('service')->group(function(){
     Route::get('/', ServiceController::class)->name('index');
     Route::get('{service:slug}', ServiceSingleController::class)->name('show');
 });
 
-Route::prefix('post')->as('post')->group(function(){
+Route::middleware('visitor')->prefix('post')->as('post')->group(function(){
     Route::get('/', BlogController::class)->name('index');
     Route::get('{post:slug}', BlogSingleController::class)->name('show');
 });
 
-Route::prefix('portfolio')->as('portfolio')->group(function(){
+Route::middleware('visitor')->prefix('portfolio')->as('portfolio')->group(function(){
     Route::get('/', PortfolioController::class)->name('index');
     Route::get('{portfolio:slug}', PortfolioSingleController::class)->name('show');
 });
