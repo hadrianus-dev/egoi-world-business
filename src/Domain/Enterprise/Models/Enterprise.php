@@ -12,12 +12,14 @@ use JustSteveKing\KeyFactory\Models\Concerns\HasKey;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Domain\Enterprise\Models\Builders\EnterpriseBuilder;
+use Shetabit\Visitor\Traits\Visitable;
 
 class Enterprise extends Model
 {
     use HasKey;
     use HasSlug;
     use HasFactory;
+    use Visitable;
 
     protected $fillable = [
         'key',

@@ -4,22 +4,27 @@ declare(strict_types=1);
 
 namespace Domain\Post\Models;
 
-use Domain\Category\Models\Category;
-use Domain\Comment\Models\Comment;
-use Illuminate\Database\Eloquent\Model;
-use Domain\Shared\Models\Concerns\HasSlug;
-use Domain\Post\Models\Builders\PostBuilder;
 use Domain\Shared\Models\User;
+use Domain\Comment\Models\Comment;
+use Domain\Category\Models\Category;
+use Illuminate\Database\Eloquent\Model;
+use Coderflex\Laravisit\Concerns\CanVisit;
+use Domain\Shared\Models\Concerns\HasSlug;
+use Coderflex\Laravisit\Concerns\HasVisits;
+use Domain\Post\Models\Builders\PostBuilder;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use JustSteveKing\KeyFactory\Models\Concerns\HasKey;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Shetabit\Visitor\Traits\Visitable;
 
-class Post extends Model
+class Post extends Model implements CanVisit
 {
     use HasKey;
     use HasSlug;
     use HasFactory;
+    use HasVisits;
+    use Visitable;
 
     protected $fillable = [
         'key',

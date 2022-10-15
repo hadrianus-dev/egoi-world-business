@@ -138,7 +138,7 @@
                                             <div class="sidebar__post-content">
                                                 <h3>
                                                     <span class="sidebar__post-content-meta"><i class="far fa-bookmark"></i> {{$posts->category->title}}</span>
-                                                    <a href="news-details.html">{{Str::words($posts->title, 3, '...')}}</a>
+                                                    <a href="{{route('postshow', $posts->slug)}}">{{Str::words($posts->title, 3, '...')}}</a>
                                                 </h3>
                                             </div>
                                         </li>
@@ -165,7 +165,8 @@
                                         @foreach ($categories as $category)
                                         <li class="{{($category->id === $post->category->id) ? 'active' : ''}}"><a href="#">{{$category->title}} 
                                             <span class="fas fa-angle-double-right">
-                                                </span></a></li>
+                                            </span></a>
+                                        </li>
                                         @endforeach
                                     </ul>
                                 </div>

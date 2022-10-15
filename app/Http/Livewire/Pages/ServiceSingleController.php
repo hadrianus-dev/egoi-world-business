@@ -7,16 +7,18 @@ use Domain\Service\Models\Service;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Domain\Enterprise\Models\Enterprise;
+use Illuminate\Http\Request;
 
 class ServiceSingleController extends Component
 {
     public $Enterprise;
     public $service;
 
-    public function mount(Service $service, Enterprise $enterprise): void
+    public function mount(Service $service, Enterprise $enterprise, Request $request): void
     {
         $this->Enterprise = $enterprise::where('published', true)->first();
         $this->service = $service;
+        $request->visitor()->visit($service); 
     }
     public function render()
     {

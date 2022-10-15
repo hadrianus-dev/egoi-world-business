@@ -13,12 +13,14 @@ use JustSteveKing\KeyFactory\Models\Concerns\HasKey;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Domain\Portfolio\Models\Builders\PortfolioBuilder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Shetabit\Visitor\Traits\Visitable;
 
 class Portfolio extends Model
 {
     use HasKey;
     use HasSlug;
     use HasFactory;
+    use Visitable;
 
     protected $fillable = [
         'key',

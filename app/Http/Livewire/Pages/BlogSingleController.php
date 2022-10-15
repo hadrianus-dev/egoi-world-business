@@ -10,8 +10,7 @@ use Livewire\Component;
 
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Artesaos\SEOTools\Facades\OpenGraph;
-use Artesaos\SEOTools\Facades\TwitterCard;
-use Artesaos\SEOTools\Facades\JsonLd;
+use Illuminate\Http\Request;
 
 class BlogSingleController extends Component
 {
@@ -31,7 +30,7 @@ class BlogSingleController extends Component
         'comment.body' => 'required|string'
     ];
 
-    public function mount(Post $post, Category $category, Comment $comment, Gallery $gallery): void
+    public function mount(Post $post, Category $category, Comment $comment, Gallery $gallery, Request $request): void
     {
         $this->post = $post;
         $this->comment = $comment;
@@ -41,6 +40,8 @@ class BlogSingleController extends Component
         $this->comments = $comment::where([['published', true],['post_id', $this->post->id]])->orderBy('created_at', 'desc')->limit(2)->get();
         $this->posts = Post::with(['category','user'])->where('published', true)->orderBy('created_at', 'desc')->limit(3)->get();
         $this->categories = $category::where('published', true)->orderBy('created_at', 'desc')->limit(3)->get();
+        
+        $request->visitor()->visit($post); // create log for post
     }
 
     public function comment()

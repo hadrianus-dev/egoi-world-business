@@ -7,18 +7,20 @@ use Domain\Gallery\Models\Gallery;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Domain\Portfolio\Models\Portfolio;
 use Artesaos\SEOTools\Facades\OpenGraph;
+use Illuminate\Http\Request;
 
 class PortfolioSingleController extends Component
 {
     public $portfolio;
     public $gallery;
     
-    public function mount(Portfolio $portfolio, Gallery $gallery): void
+    public function mount(Portfolio $portfolio, Gallery $gallery, Request $request): void
     {
         $this->portfolio = $portfolio;
         $this->gallery = $this->portfolio->gallery()->get();
         #dd($this->gallery);
         #dd($this->portfolios[0]->gallery()->first()['cover']);
+        $request->visitor()->visit($portfolio); // create log for post
     }
 
     public function render()
