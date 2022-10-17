@@ -81,7 +81,7 @@
                                 <i class="fas fa-phone"></i>
                             </div>
                             <div class="main-menu__call-content">
-                                <a href="tel:9200368090">(+244) 999 999-999</a>
+                                <a href="{{$Enterprise->general_phone}}">{{$Enterprise->general_phone}}</a>
                                 <p>Entre Em Contacto</p>
                             </div>
                         </div>

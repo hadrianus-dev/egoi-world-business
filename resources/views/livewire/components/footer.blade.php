@@ -37,7 +37,7 @@
                                             <span class="icon-pin"></span>
                                         </div>
                                         <div class="text">
-                                            <p>30 Commercial Road Fratton, Australia</p>
+                                            <p>Viana, Zango 1, Rua da Pulicia</p>
                                         </div>
                                     </li>
                                 </ul>

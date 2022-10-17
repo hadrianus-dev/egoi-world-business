@@ -30,17 +30,11 @@ class HomeController extends Component
             $request->visitor()->visit();
        # }
     }
-
-    public function order(): void
-    {
-        # code...
-    }
     
     public function render()
     {
         $base = 'http://egoi-world-business.test/post/';
 
-        
         SEOTools::setTitle('Home');
         SEOTools::setDescription('A Egoli World Business é uma empresa angolana, 
         sediada em Luanda e com delegações em Portugal e na República do Congo, 
@@ -52,7 +46,6 @@ class HomeController extends Component
         SEOTools::twitter()->setSite('@egoliworldbusiness');
         SEOTools::jsonLd()->addImage('https://egoliworldbusiness.com/public/assets/images/resources/logo-1.png');
 
-        
         return view('livewire.pages.home-controller')->layout('layouts.base');
     }
 }

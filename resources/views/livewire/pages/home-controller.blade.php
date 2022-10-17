@@ -181,7 +181,7 @@
                                     <img src="{{asset('assets/images/resources/about-one-img-1.jpg')}}" alt="">
                                 </div>
                                 <div class="about-one__img-two">
-                                    <img src="{{asset('assets/images/resources/about-one-img-2.jpg')}}" alt="">
+                                    <img src="{{asset('assets/images/resources/about-one-img-2.png')}}" alt="">
                                 </div>
                                 <div class="about-one__experience">
                                     <h2 class="about-one__experience-year">20</h2>
@@ -214,7 +214,7 @@
                                         <i class="fa fa-check"></i>
                                     </div>
                                     <div class="text">
-                                        <p>Refresing to get such a personal touch.</p>
+                                        <p>Soluções precisas dentro e fora de África.</p>
                                     </div>
                                 </li>
                                 <li>
@@ -222,7 +222,7 @@
                                         <i class="fa fa-check"></i>
                                     </div>
                                     <div class="text">
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate.</p>
+                                        <p>Uma reputação que a antecede em qualquer lugar.</p>
                                     </div>
                                 </li>
                                 <li>
@@ -230,7 +230,7 @@
                                         <i class="fa fa-check"></i>
                                     </div>
                                     <div class="text">
-                                        <p>Velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                        <p>Conquistas por excelência, históricos de alto êxito.</p>
                                     </div>
                                 </li>
                             </ul>
@@ -279,7 +279,8 @@
                         </div>
                         <div class="col-xl-7 col-lg-6">
                             <div class="services-one__top-right">
-                                <p class="services-one__top-text">Nullam eu nibh vitae est tempor molestie id sed ex. Quisque dignissim maximus ipsum, sed rutrum metus tincidunt et. Sed eget tincidunt ipsum.</p>
+                                <p class="services-one__top-text">Por aqui, usamos das diversas maneiras para alcançar mais resultados e em menos tempo, sem deixar de lado 
+                                    a qualidade, seja com treinamentos, aplicativos, trabalho em equipe e, é claro, vontade de trabalhar.</p>
                             </div>
                         </div>
                     </div>
